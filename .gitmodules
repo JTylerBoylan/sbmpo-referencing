@@ -1,3 +1,5 @@
 [submodule "sbmpo"]
 	path = sbmpo
 	url = https://github.com/JTylerBoylan/sbmpo
+	branch = benchmarking
+	update = rebase
