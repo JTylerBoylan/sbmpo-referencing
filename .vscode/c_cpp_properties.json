@@ -3,7 +3,10 @@
         {
             "name": "Linux",
             "includePath": [
-                "${workspaceFolder}/**"
+                "${workspaceFolder}/sbmpo/sbmpo/include/**",
+                "${workspaceFolder}/sbmpo/sbmpo_models/include/**",
+                "${workspaceFolder}/sbmpo/sbmpo_benchmarking/include/**",
+                "${workspaceFolder}/sbmpo_referencing/include/**"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/gcc",
