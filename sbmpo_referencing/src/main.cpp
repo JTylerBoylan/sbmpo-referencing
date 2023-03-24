@@ -1,10 +1,10 @@
 #include <sbmpo/sbmpo.hpp>
-#include <sbmpo_referencing/Referencer.hpp>
 #include <sbmpo_models/UnicycleSteering.hpp>
-#include <sbmpo_benchmarking/benchmark.hpp>
+#include <sbmpo_referencing/ReferencerBenchmark.hpp>
 #include <iostream>
 
 using namespace sbmpo_referencing;
+using namespace sbmpo_benchmarking;
 
 int main(int argc, char ** argv) {
 
@@ -19,13 +19,13 @@ int main(int argc, char ** argv) {
       return 0;
   }
 
-  Referencer<sbmpo_models::UnicycleSteeringModel> model;
+  ReferencerBenchmark<sbmpo_models::UnicycleSteeringModel> benchmarker(csv_folder);
+  //UnicycleSteeringBenchmark benchmarker(csv_folder);
+  //UnicycleReferencerBenchmark benchmarker(csv_folder);
 
-  model.set_reference_factor(0.1);
+  benchmarker.set_reference_factor(0.01);
 
-  sbmpo_benchmarking::Benchmark benchmarker(csv_folder);
-
-  benchmarker.benchmark(model);
+  benchmarker.benchmark(benchmarker);
   
   return 0;
 }

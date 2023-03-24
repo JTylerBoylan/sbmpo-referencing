@@ -43,7 +43,7 @@ for p = 1:length(paths)
         nx(n) = node.state(1);
         ny(n) = node.state(2);
         plot(nx(n),ny(n),'o', 'MarkerSize', 2, 'HandleVisibility', 'off', ...
-            'MarkerFaceColor', [node.f/30 0 1-node.f/30])
+            'MarkerFaceColor', [node.f/30 0 node.f])
     end
     % plot (nx, ny, 'ob', 'MarkerSize', 2, 'HandleVisibility', 'off')
     
