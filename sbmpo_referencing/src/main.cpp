@@ -20,10 +20,8 @@ int main(int argc, char ** argv) {
   }
 
   ReferencerBenchmark<sbmpo_models::UnicycleSteeringModel> benchmarker(csv_folder);
-  //UnicycleSteeringBenchmark benchmarker(csv_folder);
-  //UnicycleReferencerBenchmark benchmarker(csv_folder);
 
-  benchmarker.set_reference_factor(0.01);
+  benchmarker.set_reference_factor(0.1);
 
   benchmarker.benchmark(benchmarker);
   

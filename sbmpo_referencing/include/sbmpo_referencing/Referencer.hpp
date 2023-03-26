@@ -28,13 +28,14 @@ static_assert(std::is_base_of<sbmpo::Model, ModelType>::value, "ModelType must d
     virtual float j_value(const State& state) {
         if (reference_path_.empty())
             return 0.0f;
-        float min_h = std::numeric_limits<float>::infinity();
+        float min_j = std::numeric_limits<float>::infinity();
         for (const State& ref_state : reference_path_) {
-            const float h = ModelType::heuristic(state, ref_state);
-            if (h < min_h)
-                min_h = h;
+            float j = 0;
+            // TODO
+            if (j < min_j)
+                min_j = j;
         }
-        return min_h;
+        return min_j;
     }
 
     // Set the reference factor

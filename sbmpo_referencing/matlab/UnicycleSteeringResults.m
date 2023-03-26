@@ -35,6 +35,9 @@ for p = 1:length(paths)
     goal_point = [goal(1)-goal_r goal(2)-goal_r goal_r*2 goal_r*2];
     rectangle('Position', goal_point, 'Curvature', [1,1], 'FaceColor', 'b')
 
+    f_min = min([nodes(p).nodes.f]);
+    f_max = max([nodes(p).nodes.f]);
+    
     % Plot all nodes
     nx = zeros(1, nodes(p).buffer_size);
     ny = zeros(1, nodes(p).buffer_size);
@@ -43,7 +46,7 @@ for p = 1:length(paths)
         nx(n) = node.state(1);
         ny(n) = node.state(2);
         plot(nx(n),ny(n),'o', 'MarkerSize', 2, 'HandleVisibility', 'off', ...
-            'MarkerFaceColor', [node.f/30 0 1-node.f/30])
+            'MarkerFaceColor', [(node.f - f_min)/(f_max - f_min), 1-(node.f - f_min)/(f_max - f_min), 0])
     end
     % plot (nx, ny, 'ob', 'MarkerSize', 2, 'HandleVisibility', 'off')
     
